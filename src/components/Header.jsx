@@ -46,6 +46,10 @@ export function Header({ theme, onThemeToggle, selectedUser, onBack }) {
               borderRadius: "var(--radius)",
               cursor: "pointer",
               fontSize: "16px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "2px solid var(--border)",
             }}>
             <img
               src={theme === "light" ? dark : light}
