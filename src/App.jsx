@@ -5,7 +5,7 @@ import { Header, UserSearchSection, UserDetailSection } from "./components";
 
 export default function App() {
   // Theme Management
-  const [theme, setTheme] = useLocalStorage("theme", "light");
+  const [theme, setTheme] = useLocalStorage("theme", "dark");
 
   // Search State
   const [searchQuery, setSearchQuery] = useState("");
