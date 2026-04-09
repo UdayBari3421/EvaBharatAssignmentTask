@@ -1,3 +1,7 @@
+import light from "../icons/light.svg";
+import dark from "../icons/dark.svg";
+import github from "../icons/github.svg";
+
 export function Header({ theme, onThemeToggle, selectedUser, onBack }) {
   return (
     <header>
@@ -9,7 +13,30 @@ export function Header({ theme, onThemeToggle, selectedUser, onBack }) {
             alignItems: "center",
             marginBottom: "16px",
           }}>
-          <h1 style={{ margin: 0, fontSize: "24px", fontWeight: "700" }}>🔍 GitHub Explorer</h1>
+          <h1
+            style={{
+              margin: 0,
+              fontSize: "24px",
+              fontWeight: "700",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px",
+            }}>
+            <img
+              src={github}
+              alt="GitHub"
+              style={{
+                width: "50px",
+                height: "50px",
+                marginRight: "8px",
+                background: "white",
+                padding: "4px",
+                borderRadius: "50%",
+              }}
+            />
+            GitHub Explorer
+          </h1>
           <button
             onClick={onThemeToggle}
             style={{
@@ -20,7 +47,11 @@ export function Header({ theme, onThemeToggle, selectedUser, onBack }) {
               cursor: "pointer",
               fontSize: "16px",
             }}>
-            {theme === "light" ? "🌙" : "☀️"}
+            <img
+              src={theme === "light" ? dark : light}
+              alt="Theme toggle"
+              style={{ width: "20px", height: "20px" }}
+            />
           </button>
         </div>
 
@@ -33,8 +64,8 @@ export function Header({ theme, onThemeToggle, selectedUser, onBack }) {
               padding: "6px 12px",
               borderRadius: "var(--radius)",
               cursor: "pointer",
-                fontSize: "14px",
-                color: "green"
+              fontSize: "14px",
+              color: "green",
             }}>
             ← Back to Search
           </button>

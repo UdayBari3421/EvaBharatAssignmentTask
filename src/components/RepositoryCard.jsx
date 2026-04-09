@@ -1,3 +1,7 @@
+import star from "../icons/star.svg";
+import fork from "../icons/fork.svg";
+import eye from "../icons/watcher.svg";
+
 export function RepositoryCard({ repo, isBookmarked, onBookmark }) {
   return (
     <div
@@ -6,6 +10,9 @@ export function RepositoryCard({ repo, isBookmarked, onBookmark }) {
         border: "1px solid var(--border)",
         borderRadius: "var(--radius)",
         padding: "16px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
         transition: "var(--transition)",
       }}
       onMouseEnter={(e) => {
@@ -58,7 +65,11 @@ export function RepositoryCard({ repo, isBookmarked, onBookmark }) {
             cursor: "pointer",
             padding: "4px",
           }}>
-          {isBookmarked ? "⭐" : "☆"}
+          {isBookmarked ? (
+            <img src={star} alt="Starred" style={{ width: "20px", height: "20px" }} />
+          ) : (
+            "☆"
+          )}
         </button>
       </div>
 
@@ -119,9 +130,57 @@ export function RepositoryCard({ repo, isBookmarked, onBookmark }) {
           borderTop: "1px solid var(--border)",
           paddingTop: "12px",
         }}>
-        <span>⭐ {repo.stargazers_count}</span>
-        <span>🔀 {repo.forks_count}</span>
-        <span>👁️ {repo.watchers_count}</span>
+        <span
+          style={{
+            display: "flex",
+            alignItems: "center",
+            background: "white",
+            width: "50px",
+            padding: "4px",
+            borderRadius: "50px",
+            fontWeight: "bold",
+          }}>
+          <img
+            src={star}
+            alt="Stars"
+            style={{ width: "16px", height: "16px", marginRight: "4px" }}
+          />
+          {repo.stargazers_count}
+        </span>
+        <span
+          style={{
+            display: "flex",
+            alignItems: "center",
+            background: "white",
+            width: "50px",
+            padding: "4px",
+            borderRadius: "50px",
+            fontWeight: "bold",
+          }}>
+          <img
+            src={fork}
+            alt="Forks"
+            style={{ width: "16px", height: "16px", marginRight: "4px" }}
+          />
+          {repo.forks_count}
+        </span>
+        <span
+          style={{
+            display: "flex",
+            alignItems: "center",
+            background: "white",
+            width: "50px",
+            padding: "4px",
+            borderRadius: "50px",
+            fontWeight: "bold",
+          }}>
+          <img
+            src={eye}
+            alt="Watchers"
+            style={{ width: "16px", height: "16px", marginRight: "4px" }}
+          />
+          {repo.watchers_count}
+        </span>
       </div>
     </div>
   );
