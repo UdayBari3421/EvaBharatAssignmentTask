@@ -1,12 +1,8 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
-    "devCommand": "npm run dev",
-    "framework": "vite",
-    "env": [
+    "rewrites": [
         {
-            "key": "REACT_APP_ENV",
-            "value": "production"
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
