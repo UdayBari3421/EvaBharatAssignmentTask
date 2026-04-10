@@ -1,3 +1,5 @@
+import warningIcon from "../icons/warning.svg";
+
 export function ErrorMessage({ message }) {
   return (
     <div
@@ -9,7 +11,16 @@ export function ErrorMessage({ message }) {
         borderRadius: "var(--radius)",
         marginBottom: "16px",
       }}>
-      ⚠️ {message}
+      <img
+        src={warningIcon}
+        style={{
+          width: "16px",
+          height: "16px",
+          marginRight: "8px",
+        }}
+        alt="Warning"
+      />
+      {message}
     </div>
   );
 }
