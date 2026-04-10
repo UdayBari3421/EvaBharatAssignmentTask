@@ -132,6 +132,7 @@ export function RepositoryCard({ repo, isBookmarked, onBookmark }) {
         }}>
         <span
           style={{
+            justifyContent: "center",
             display: "flex",
             alignItems: "center",
             background: "white",
@@ -149,6 +150,7 @@ export function RepositoryCard({ repo, isBookmarked, onBookmark }) {
         </span>
         <span
           style={{
+            justifyContent: "center",
             display: "flex",
             alignItems: "center",
             background: "white",
@@ -166,6 +168,7 @@ export function RepositoryCard({ repo, isBookmarked, onBookmark }) {
         </span>
         <span
           style={{
+            justifyContent: "center",
             display: "flex",
             alignItems: "center",
             background: "white",
